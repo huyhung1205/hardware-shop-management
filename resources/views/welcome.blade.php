@@ -26,6 +26,14 @@
                     <span class="rounded-full bg-amber-700 px-4 py-2 text-white">Tailwind CSS</span>
                     <span class="rounded-full bg-emerald-700 px-4 py-2 text-white">Vite</span>
                 </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="{{ route('login') }}" class="rounded-xl bg-stone-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-stone-800">
+                        Dang nhap
+                    </a>
+                    <a href="{{ route('register') }}" class="rounded-xl bg-amber-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-800">
+                        Tao tai khoan test
+                    </a>
+                </div>
             </div>
 
             <div class="grid gap-4">

@@ -11,18 +11,20 @@ test('users can authenticate using the login screen', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertNoContent();
+    $response->assertRedirect('/dashboard');
 });
 
 test('users can not authenticate with invalid password', function () {
     $user = User::factory()->create();
 
-    $this->post('/login', [
+    $response = $this->from('/login')->post('/login', [
         'email' => $user->email,
         'password' => 'wrong-password',
     ]);
 
     $this->assertGuest();
+    $response->assertRedirect('/login');
+    $response->assertSessionHasErrors('email');
 });
 
 test('users can logout', function () {
@@ -31,5 +33,5 @@ test('users can logout', function () {
     $response = $this->actingAs($user)->post('/logout');
 
     $this->assertGuest();
-    $response->assertNoContent();
+    $response->assertRedirect('/login');
 });
