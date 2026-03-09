@@ -16,8 +16,14 @@
 /public/build
 /public/hot
 /public/storage
+/public/vendor/tinymce/*
+!/public/vendor/tinymce/README.md
+!/public/vendor/tinymce/.gitkeep
 /storage/*.key
 /storage/pail
+/storage/app/dia-gioi/vn.json
+/playwright-report
+/test-results
 /vendor
 Homestead.json
 Homestead.yaml
